@@ -1,21 +1,30 @@
-package org.ust.security_service.model;
+package org.ust.security_service.Service;
+
 
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.User;
+
+import org.springframework.stereotype.Service;
+import org.ust.security_service.model.User_access;
 
 import java.util.Collection;
 import java.util.Collections;
 
-
+@Service
 public class UserPrincipal implements UserDetails {
 
-    private  User user;
 
-    public UserPrincipal(User user) {
-        this.user = user;
+    User_access user;
+
+    public UserPrincipal(){
+
+    }
+
+
+    public UserPrincipal(User_access user) {
+        this.user=user;
     }
 
     @Override
